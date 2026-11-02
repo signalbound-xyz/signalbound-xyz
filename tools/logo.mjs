@@ -142,65 +142,8 @@ export function lockupSVG({ scale = 1 } = {}) {
   return svg({ w, h: MARK_H, body, label: "Signalbound Studio", scale });
 }
 
-// Glyphs for the "Potion Game" wordmark: 2-px strokes, rows relative to
-// the x-height top (ascenders negative, descenders 7..9). Same letterforms as the
-// game's brand kit; the icon beside them is the game's own crowned flask.
-const FONT_LC = {
-  p: [[0, "######."], [1, "#######"], [2, "##...##"], [3, "##...##"], [4, "##...##"], [5, "#######"], [6, "######."], [7, "##....."], [8, "##....."], [9, "##....."]],
-  o: [[0, ".#####."], [1, "#######"], [2, "##...##"], [3, "##...##"], [4, "##...##"], [5, "#######"], [6, ".#####."]],
-  t: [[-3, ".##.."], [-2, ".##.."], [-1, "#####"], [0, "#####"], [1, ".##.."], [2, ".##.."], [3, ".##.."], [4, ".##.."], [5, ".##.#"], [6, "..###"]],
-  i: [[-3, "##"], [-2, "##"], [0, "##"], [1, "##"], [2, "##"], [3, "##"], [4, "##"], [5, "##"], [6, "##"]],
-  n: [[0, "##.###."], [1, "#######"], [2, "##...##"], [3, "##...##"], [4, "##...##"], [5, "##...##"], [6, "##...##"]],
-  g: [[0, ".######"], [1, "#######"], [2, "##...##"], [3, "##...##"], [4, "##...##"], [5, "#######"], [6, ".######"], [7, ".....##"], [8, "#######"], [9, ".#####."]],
-  a: [[0, ".#####."], [1, ".....##"], [2, ".######"], [3, "#######"], [4, "##...##"], [5, "#######"], [6, ".######"]],
-  m: [[0, "#######."], [1, "########"], [2, "##.##.##"], [3, "##.##.##"], [4, "##.##.##"], [5, "##.##.##"], [6, "##.##.##"]],
-  e: [[0, ".#####."], [1, "#######"], [2, "##...##"], [3, "#######"], [4, "##....."], [5, "#######"], [6, ".#####."]],
-  ".": [[5, "##"], [6, "##"]],
-  " ": [[0, "..."]],
-  P: [[-3, "######."], [-2, "#######"], [-1, "##...##"], [0, "##...##"], [1, "#######"], [2, "######."], [3, "##....."], [4, "##....."], [5, "##....."], [6, "##....."]],
-  G: [[-3, ".#####."], [-2, "#######"], [-1, "##...##"], [0, "##....."], [1, "##.####"], [2, "##.####"], [3, "##...##"], [4, "##...##"], [5, "#######"], [6, ".#####."]],
-};
-const LC_ASCENT = 3; // rows above the x-height top
-const LC_ROWS = 13; // -3..9
-
-function lowerPixels(text, x0, y0, colorFor) {
-  const out = [];
-  let x = x0;
-  for (const ch of text) {
-    const glyph = FONT_LC[ch];
-    if (!glyph) throw new Error(`no lowercase glyph for ${ch}`);
-    const c = colorFor(ch); // once per glyph, so a blank space still advances the colour
-    let width = 0;
-    for (const [row, bits] of glyph) {
-      width = Math.max(width, bits.length);
-      [...bits].forEach((b, i) => b === "#" && out.push({ x: x + i, y: y0 + row + LC_ASCENT, c }));
-    }
-    x += width + 1;
-  }
-  return { pixels: out, width: x - x0 - 1 };
-}
-// The game's own mark, inlined (an SVG inside <img> may not load external images).
-// signalbound-mark-idle.svg carries the 4-frame idle animation (SMIL), so the
-// lockup animates by itself; the static mark is used for the reduced-motion copy.
-function gameMarkInner(file = "signalbound-mark-idle.svg") {
-  const raw = fs.readFileSync(path.join(ASSETS, file), "utf8").replace(/<metadata>[\s\S]*?<\/metadata>/, "");
-  return raw.slice(raw.indexOf(">") + 1, raw.lastIndexOf("</svg>")).trim();
-}
-const GAME_MARK_W = 18;
-const GAME_MARK_H = 28;
-export function gameLockupSVG({ scale = 1, ink = false, animated = true } = {}) {
-  const textX = GAME_MARK_W + 3;
-  const textY = Math.floor((GAME_MARK_H - LC_ROWS) / 2); // 7: rows 7..19, shadow to 20
-  let secondWord = false;
-  const colorFor = (ch) => {
-    if (ch === " ") secondWord = true;
-    return secondWord ? "R" : ink ? "K" : "C"; // "Potion" cream (ink on paper), "Game" liquid
-  };
-  const { pixels, width } = lowerPixels("Potion Game", textX, textY, colorFor);
-  const w = textX + width + 1;
-  const body = `<g class="game-mark">${gameMarkInner(animated ? "signalbound-mark-idle.svg" : "signalbound-mark.svg")}</g>` + paths(shadowed(pixels, ink ? "D" : "S"));
-  return svg({ w, h: GAME_MARK_H, body, label: "Potion Game", scale });
-}
+// The Potion Game lockup is the game's own art: assets/potion-game-lockup.svg is
+// copied from the game repo (web/public/assets), not generated here.
 
 // ---------- write files ----------
 fs.mkdirSync(ASSETS, { recursive: true });
@@ -210,9 +153,6 @@ const files = {
   "assets/studio-wordmark.svg": wordmarkSVG(),
   "assets/studio-lockup.svg": lockupSVG(),
   "favicon.svg": iconSVG(),
-  "assets/potion-game-lockup.svg": gameLockupSVG(),
-  "assets/potion-game-lockup-ink.svg": gameLockupSVG({ ink: true }),
-  "assets/potion-game-lockup-static.svg": gameLockupSVG({ animated: false }),
 };
 for (const [rel, body] of Object.entries(files)) {
   fs.writeFileSync(path.join(ROOT, rel), body);

@@ -80,7 +80,6 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 @keyframes arc-pulse { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .seal-box, .seal-box svg, .seal-box .tip, .seal-box .arc { animation: none; transition: none; }
-  .game-lockup { content: url("assets/potion-game-lockup-static.svg"); } /* the flask's idle loop is baked into the SVG */
 }
 
 /* ---------- sections ---------- */
@@ -101,7 +100,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
   padding-bottom: 20px; border-bottom: 3px solid #2a2e36; margin-bottom: 24px;
 }
-.game-lockup { display: block; width: 297px; height: 84px; } /* 3× of the 99×28 game lockup */
+.game-lockup { display: block; width: 201px; height: 96px; } /* 3× of the 67×32 game lockup */
 .status {
   font-family: var(--font-display); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1;
   color: var(--ink); background: var(--paper); border: 3px solid var(--ink);
@@ -168,7 +167,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .facts-wrap .fact span { text-align: left; }
 }
 @media (max-width: 480px) {
-  .game-lockup { width: 198px; height: 56px; } /* 2× */
+  .game-lockup { width: 134px; height: 64px; } /* 2× */
 }
 @media (max-width: 420px) {
   .bag { grid-template-columns: repeat(4, 64px); grid-template-rows: repeat(3, 64px); }
