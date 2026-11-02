@@ -27,9 +27,7 @@
   }
   .tagcard::before { content: ""; position: absolute; inset: 7px; border: 2px solid var(--ink); pointer-events: none; }
   .tagcard .k { font-family: var(--font-display); font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin: 0 0 14px; }
-  .tagcard .game-id { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; }
-  .tagcard .game-id img { width: 54px; height: 84px; image-rendering: pixelated; } /* 3× of 18×28 */
-  .tagcard .game-id span { font-family: var(--font-display); font-weight: 700; font-size: 24px; letter-spacing: -1px; }
+  .tagcard .game-lockup { display: block; width: 294px; height: 84px; image-rendering: pixelated; margin: 0 0 14px; } /* 3× of 98×28 */
   .tagcard p { font-size: 28px; line-height: 1.05; margin: 0; color: var(--ink-soft); }
 </style>
 </head>
@@ -43,7 +41,7 @@
   </div>
   <div class="tagcard">
     <p class="k">Now pouring</p>
-    <div class="game-id"><img src="../assets/signalbound-mark.svg" alt=""><span>potion.game</span></div>
+    <img class="game-lockup" src="../assets/potion-game-lockup-ink.svg" alt="potion.game">
     <p>Pack it. Don’t play it. Twelve cells, permanent bottles, fights that settle on-chain.</p>
   </div>
 </div>

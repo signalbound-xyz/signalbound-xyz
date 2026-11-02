@@ -11,7 +11,7 @@ studio; [potion.game](https://potion.game) is the game it makes.
 | `site.css` | Page styles. Builds on `label.css`. |
 | `label.css` | The shared potion label system (cream card, facts panel, bag grid), copied from the potion.game brand kit. |
 | `fonts/` | Silkscreen and VT323 (OFL, see `fonts/LICENSE.md`). |
-| `assets/` | Studio mark, lockup and wordmark (generated), the game's own crowned-flask mark, potion sprites. All pixel art; scale only in whole multiples. |
+| `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its potion.game lockup (flask + lowercase wordmark, generated), potion sprites. All pixel art; scale only in whole multiples. |
 | `tools/logo.mjs` | Draws the studio ghost, wordmark and lockup from pixel maps; exports the favicons, `apple-touch-icon.png`, `icon-512.png` and the inline hero mark. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
 
@@ -66,10 +66,11 @@ players to the testnet build. When the domain serves the game, replace these in
 ## Brand rules
 
 - Pixel art is scaled only in whole multiples: studio lockup 82×16 (3× header, 6× OG
-  card), studio mark 13×16 (2× footer, 10× hero, 8× on phones), the game's mark 18×28
-  (2× on the game card, 3× on the OG card).
+  card), studio mark 13×16 (2× footer, 10× hero, 8× on phones), potion.game lockup
+  98×28 (3× on the game card, 2× on narrow phones, 3× ink variant on the OG card).
 - Signalbound is the studio and owns the ghost. potion.game is the game and keeps its
-  own crowned-flask icons and potion sprites, untouched. The game card is where the
+  own crowned-flask icon and potion sprites, untouched; its lockup pairs that flask with
+  a lowercase pixel wordmark (".game" in liquid red). The game card is where the
   label voice lives (warnings, potion facts); the studio copy stays plain.
 - Colours and type come from `label.css`: paper `#f3e7c9`, ink `#15110e`, night
   `#101215`, red `#c8372d`, liquid `#e85d3a`, plus signal teal `#5ad1c8` for the studio;
