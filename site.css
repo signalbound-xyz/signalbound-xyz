@@ -26,7 +26,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px 32px; flex-wrap: wrap; padding: 28px 0 8px;
 }
-.top .brand img { display: block; width: 204px; height: 64px; } /* 2× of 102×32 */
+.top .brand img { display: block; width: 246px; height: 48px; } /* 3× of the 82×16 lockup */
 .top nav {
   display: flex; gap: 22px; flex-wrap: wrap;
   font-family: var(--font-display); font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
@@ -69,7 +69,18 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
     linear-gradient(90deg, transparent 23px, rgba(21, 17, 14, 0.08) 24px);
   background-size: 24px 24px;
 }
-.seal-box img { width: 144px; height: 224px; filter: drop-shadow(6px 6px 0 rgba(0, 0, 0, 0.25)); } /* 8× of 18×28 */
+.seal-box { transition: transform 0.25s steps(3); }
+.seal-box:hover { transform: rotate(-3deg); }
+.seal-box svg { width: 130px; height: 160px; filter: drop-shadow(6px 6px 0 rgba(0, 0, 0, 0.25)); animation: ghost-bob 3.2s ease-in-out infinite; } /* 10× of 13×16 */
+.seal-box .tip { animation: tip-blink 2.4s steps(1, end) infinite; }
+.seal-box .arc { animation: arc-pulse 2.4s ease-out infinite; }
+.seal-box .arc-r { animation-delay: 0.3s; }
+@keyframes ghost-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes tip-blink { 0%, 55%, 100% { opacity: 1; } 60%, 95% { opacity: 0.25; } }
+@keyframes arc-pulse { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .seal-box, .seal-box svg, .seal-box .tip, .seal-box .arc { animation: none; transition: none; }
+}
 
 /* ---------- sections ---------- */
 .section-title {
@@ -89,7 +100,9 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
   padding-bottom: 20px; border-bottom: 3px solid #2a2e36; margin-bottom: 24px;
 }
-.game-head .wordmark { display: block; width: 492px; height: 84px; } /* 6× of the 82×14 grid */
+.game-id { display: flex; align-items: center; gap: 14px; }
+.game-id img { width: 36px; height: 56px; } /* 2× of the game's 18×28 mark */
+.game-name { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3.4vw, 38px); line-height: 1; letter-spacing: -1px; color: var(--paper); }
 .status {
   font-family: var(--font-display); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; line-height: 1;
   color: var(--ink); background: var(--paper); border: 3px solid var(--ink);
@@ -136,7 +149,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   padding: 32px 0 56px; border-top: 2px solid #2a2e36; margin-top: 56px;
 }
 .legal .maker { display: flex; align-items: center; gap: 12px; color: #cdbf9f; font-size: 24px; margin-bottom: 14px; }
-.legal .maker img { width: 36px; height: 56px; } /* 2× of 18×28 */
+.legal .maker img { width: 26px; height: 32px; } /* 2× of 13×16 */
 .foot-links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 22px; margin: 0 0 14px; }
 .legal p { margin: 0; }
 
@@ -146,18 +159,16 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .hero-studio { padding-top: 32px; }
   .seal { order: -1; }
   .seal-box { width: 240px; height: 240px; }
-  .seal-box img { width: 108px; height: 168px; } /* 6× */
+  .seal-box svg { width: 104px; height: 128px; } /* 8× */
   .strip, .principles { grid-template-columns: 1fr; }
   .hero-bag .bag { transform: none; margin: 8px 0 0; }
   .game-card { padding: 20px 16px 16px; }
 }
 @media (max-width: 700px) {
-  .game-head .wordmark { width: 328px; height: 56px; } /* 4× */
   .facts-wrap .fact { flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 0 6px; }
   .facts-wrap .fact span { text-align: left; }
 }
 @media (max-width: 420px) {
-  .game-head .wordmark { width: 246px; height: 42px; } /* 3× */
   .bag { grid-template-columns: repeat(4, 64px); grid-template-rows: repeat(3, 64px); }
   .cta { font-size: 16px; padding: 16px 18px 14px; }
 }
