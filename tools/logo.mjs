@@ -142,7 +142,7 @@ export function lockupSVG({ scale = 1 } = {}) {
   return svg({ w, h: MARK_H, body, label: "Signalbound Studio", scale });
 }
 
-// Lowercase glyphs for the potion.game wordmark: 2-px strokes, rows relative to
+// Glyphs for the "Potion Game" wordmark: 2-px strokes, rows relative to
 // the x-height top (ascenders negative, descenders 7..9). Same letterforms as the
 // game's brand kit; the icon beside them is the game's own crowned flask.
 const FONT_LC = {
@@ -156,6 +156,9 @@ const FONT_LC = {
   m: [[0, "#######."], [1, "########"], [2, "##.##.##"], [3, "##.##.##"], [4, "##.##.##"], [5, "##.##.##"], [6, "##.##.##"]],
   e: [[0, ".#####."], [1, "#######"], [2, "##...##"], [3, "#######"], [4, "##....."], [5, "#######"], [6, ".#####."]],
   ".": [[5, "##"], [6, "##"]],
+  " ": [[0, "..."]],
+  P: [[-3, "######."], [-2, "#######"], [-1, "##...##"], [0, "##...##"], [1, "#######"], [2, "######."], [3, "##....."], [4, "##....."], [5, "##....."], [6, "##....."]],
+  G: [[-3, ".#####."], [-2, "#######"], [-1, "##...##"], [0, "##....."], [1, "##.####"], [2, "##.####"], [3, "##...##"], [4, "##...##"], [5, "#######"], [6, ".#####."]],
 };
 const LC_ASCENT = 3; // rows above the x-height top
 const LC_ROWS = 13; // -3..9
@@ -166,10 +169,11 @@ function lowerPixels(text, x0, y0, colorFor) {
   for (const ch of text) {
     const glyph = FONT_LC[ch];
     if (!glyph) throw new Error(`no lowercase glyph for ${ch}`);
+    const c = colorFor(ch); // once per glyph, so a blank space still advances the colour
     let width = 0;
     for (const [row, bits] of glyph) {
       width = Math.max(width, bits.length);
-      [...bits].forEach((b, i) => b === "#" && out.push({ x: x + i, y: y0 + row + LC_ASCENT, c: colorFor(ch) }));
+      [...bits].forEach((b, i) => b === "#" && out.push({ x: x + i, y: y0 + row + LC_ASCENT, c }));
     }
     x += width + 1;
   }
@@ -187,15 +191,15 @@ const GAME_MARK_H = 28;
 export function gameLockupSVG({ scale = 1, ink = false, animated = true } = {}) {
   const textX = GAME_MARK_W + 3;
   const textY = Math.floor((GAME_MARK_H - LC_ROWS) / 2); // 7: rows 7..19, shadow to 20
-  let seenDot = false;
+  let secondWord = false;
   const colorFor = (ch) => {
-    if (ch === ".") seenDot = true;
-    return seenDot ? "R" : ink ? "K" : "C"; // "potion" cream (ink on paper), ".game" liquid
+    if (ch === " ") secondWord = true;
+    return secondWord ? "R" : ink ? "K" : "C"; // "Potion" cream (ink on paper), "Game" liquid
   };
-  const { pixels, width } = lowerPixels("potion.game", textX, textY, colorFor);
+  const { pixels, width } = lowerPixels("Potion Game", textX, textY, colorFor);
   const w = textX + width + 1;
   const body = `<g class="game-mark">${gameMarkInner(animated ? "signalbound-mark-idle.svg" : "signalbound-mark.svg")}</g>` + paths(shadowed(pixels, ink ? "D" : "S"));
-  return svg({ w, h: GAME_MARK_H, body, label: "potion.game", scale });
+  return svg({ w, h: GAME_MARK_H, body, label: "Potion Game", scale });
 }
 
 // ---------- write files ----------
