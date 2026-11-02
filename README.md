@@ -13,7 +13,6 @@ studio; [potion.game](https://potion.game) is the game it makes.
 | `fonts/` | Silkscreen and VT323 (OFL, see `fonts/LICENSE.md`). |
 | `assets/` | Signalbound lockup and mark, potion.game wordmark, potion sprites. All pixel art; scale only in whole multiples. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
-| `CNAME`, `.nojekyll` | GitHub Pages custom domain and "serve files as they are". |
 
 ## Preview locally
 
@@ -33,17 +32,16 @@ Edit `og/og.html`, then screenshot it with headless Chrome:
 
 ## Deploy
 
-**GitHub Pages:** Settings → Pages → Source "Deploy from a branch", branch `main`,
-folder `/ (root)`. The `CNAME` file sets the custom domain to `signalbound.xyz`;
-tick "Enforce HTTPS" once the certificate is issued.
+Hosted on **Vercel**, next to the testnet build. The repository is imported as a
+Vercel project with framework preset "Other", no build command and the repository
+root as the output directory, so every push to `main` deploys the page as is.
 
-DNS at the registrar: `A` records for the apex (`signalbound.xyz`) pointing at
-`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and
-optionally a `CNAME` for `www` → `signalbound-xyz.github.io`. The existing
-`testnet.signalbound.xyz` record is untouched.
-
-**Vercel or any static host** works just as well: import the repository, framework
-"Other", no build command, output directory `/`.
+DNS lives at Cloudflare. In Project → Settings → Domains add `signalbound.xyz`
+(and `www.signalbound.xyz` as a redirect to the apex); Vercel then shows the exact
+records to create. As of November 2026 that is an `A` record for the apex pointing
+at `76.76.21.21` and a `CNAME` for `www` pointing at the project's Vercel DNS
+target. Create both as "DNS only" (grey cloud) so Vercel can issue the certificate.
+The existing `testnet.signalbound.xyz` record is untouched.
 
 ## Links to flip when potion.game points at the game
 
