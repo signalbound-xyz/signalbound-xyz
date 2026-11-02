@@ -56,13 +56,12 @@ The existing `testnet.signalbound.xyz` record is untouched.
 
 ## Links to flip when potion.game points at the game
 
-`potion.game` currently shows the registrar's parking page, so the site sends
-players to the testnet build. When the domain serves the game, replace these in
-`index.html`:
+The testnet build lives at `testnet.potion.game`. When the apex `potion.game`
+serves the game itself, replace these in `index.html`:
 
-- `https://testnet.signalbound.xyz` → `https://potion.game` (two CTAs and the footer link)
-- `https://testnet.signalbound.xyz/game-rules/2026-10-29-balance.html` → the game's current rules page
-- `https://testnet.signalbound.xyz/terms/2026-10-27.html` → the game's current Terms of Use
+- `https://testnet.potion.game` → `https://potion.game` (one CTA and the footer link)
+- `https://testnet.potion.game/game-rules/2026-10-29-balance.html` → the game's current rules page
+- `https://testnet.potion.game/terms/2026-10-27.html` → the game's current Terms of Use
 
 ## Brand rules
 
