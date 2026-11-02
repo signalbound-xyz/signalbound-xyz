@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signalbound X banner</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../label.css">
+<style>
+  /* 1500×500. X overlays the avatar on the bottom-left and trims the top and
+     bottom on phones, so everything important sits in the middle band. */
+  body { width: 1500px; height: 500px; overflow: hidden; }
+  .banner {
+    width: 1500px; height: 500px; display: grid; grid-template-columns: 1fr auto; align-items: center;
+    gap: 60px; padding: 0 110px 90px; color: var(--paper); background: var(--night);
+    background-image:
+      linear-gradient(transparent 31px, rgba(255, 255, 255, 0.025) 32px),
+      linear-gradient(90deg, transparent 31px, rgba(255, 255, 255, 0.025) 32px);
+    background-size: 32px 32px;
+  }
+  .lockup { display: block; width: 574px; height: 112px; image-rendering: pixelated; } /* 7× of 82×16 */
+  .tag { font-family: var(--font-display); font-weight: 700; font-size: 44px; text-transform: uppercase; line-height: 1.05; margin: 26px 0 0; letter-spacing: -1px; }
+  .pour { display: grid; justify-items: center; gap: 14px; transform: rotate(2deg); }
+  .pour .k { font-family: var(--font-display); font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin: 0; }
+  .pour .card {
+    background: var(--paper); border: 6px solid var(--ink); padding: 22px 26px 18px;
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink), 12px 12px 0 0 rgba(0, 0, 0, 0.55);
+  }
+  .pour .card img { display: block; width: 294px; height: 84px; image-rendering: pixelated; } /* 3× of 98×28 */
+  .pour .bag { transform: scale(0.6); transform-origin: top center; margin: -6px 0 -90px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div>
+    <img class="lockup" src="../assets/studio-lockup.svg" alt="Signalbound Studio">
+    <h1 class="tag">Small games.<br>Long shelf life.</h1>
+  </div>
+  <div class="pour">
+    <p class="k">Now pouring</p>
+    <div class="card"><img src="../assets/potion-game-lockup-ink.svg" alt="potion.game"></div>
+  </div>
+</div>
+</body>
+</html>
