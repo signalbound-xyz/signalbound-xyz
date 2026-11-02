@@ -176,13 +176,15 @@ function lowerPixels(text, x0, y0, colorFor) {
   return { pixels: out, width: x - x0 - 1 };
 }
 // The game's own mark, inlined (an SVG inside <img> may not load external images).
-function gameMarkInner() {
-  const raw = fs.readFileSync(path.join(ASSETS, "signalbound-mark.svg"), "utf8").replace(/<metadata>[\s\S]*?<\/metadata>/, "");
+// signalbound-mark-idle.svg carries the 4-frame idle animation (SMIL), so the
+// lockup animates by itself; the static mark is used for the reduced-motion copy.
+function gameMarkInner(file = "signalbound-mark-idle.svg") {
+  const raw = fs.readFileSync(path.join(ASSETS, file), "utf8").replace(/<metadata>[\s\S]*?<\/metadata>/, "");
   return raw.slice(raw.indexOf(">") + 1, raw.lastIndexOf("</svg>")).trim();
 }
 const GAME_MARK_W = 18;
 const GAME_MARK_H = 28;
-export function gameLockupSVG({ scale = 1, ink = false } = {}) {
+export function gameLockupSVG({ scale = 1, ink = false, animated = true } = {}) {
   const textX = GAME_MARK_W + 3;
   const textY = Math.floor((GAME_MARK_H - LC_ROWS) / 2); // 7: rows 7..19, shadow to 20
   let seenDot = false;
@@ -192,7 +194,7 @@ export function gameLockupSVG({ scale = 1, ink = false } = {}) {
   };
   const { pixels, width } = lowerPixels("potion.game", textX, textY, colorFor);
   const w = textX + width + 1;
-  const body = `<g class="game-mark">${gameMarkInner()}</g>` + paths(shadowed(pixels, ink ? "D" : "S"));
+  const body = `<g class="game-mark">${gameMarkInner(animated ? "signalbound-mark-idle.svg" : "signalbound-mark.svg")}</g>` + paths(shadowed(pixels, ink ? "D" : "S"));
   return svg({ w, h: GAME_MARK_H, body, label: "potion.game", scale });
 }
 
@@ -206,6 +208,7 @@ const files = {
   "favicon.svg": iconSVG(),
   "assets/potion-game-lockup.svg": gameLockupSVG(),
   "assets/potion-game-lockup-ink.svg": gameLockupSVG({ ink: true }),
+  "assets/potion-game-lockup-static.svg": gameLockupSVG({ animated: false }),
 };
 for (const [rel, body] of Object.entries(files)) {
   fs.writeFileSync(path.join(ROOT, rel), body);

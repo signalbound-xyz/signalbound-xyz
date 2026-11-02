@@ -80,6 +80,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 @keyframes arc-pulse { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .seal-box, .seal-box svg, .seal-box .tip, .seal-box .arc { animation: none; transition: none; }
+  .game-lockup { content: url("assets/potion-game-lockup-static.svg"); } /* the flask's idle loop is baked into the SVG */
 }
 
 /* ---------- sections ---------- */

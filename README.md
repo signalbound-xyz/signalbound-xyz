@@ -11,7 +11,7 @@ studio; [potion.game](https://potion.game) is the game it makes.
 | `site.css` | Page styles. Builds on `label.css`. |
 | `label.css` | The shared potion label system (cream card, facts panel, bag grid), copied from the potion.game brand kit. |
 | `fonts/` | Silkscreen and VT323 (OFL, see `fonts/LICENSE.md`). |
-| `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its potion.game lockup (flask + lowercase wordmark, generated), potion sprites. All pixel art; scale only in whole multiples. |
+| `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark (static and 4-frame idle, from the game repo) and its potion.game lockup (flask + lowercase wordmark, generated; animated, ink and static variants), potion sprites. All pixel art; scale only in whole multiples. |
 | `tools/logo.mjs` | Draws the studio ghost, wordmark and lockup from pixel maps; exports the favicons, `apple-touch-icon.png`, `icon-512.png` and the inline hero mark. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
 | `og/x-banner.html` | X profile header, 1500×500; render it the same way as the OG card with `--window-size=1500,500`. The studio avatar for X is the padded icon from `tools/logo.mjs` (`iconSVG({ size: 25, background: true })` at 16 px per cell). |
