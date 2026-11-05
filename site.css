@@ -196,7 +196,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 }
 @media (max-width: 700px) {
   .game-grid { grid-template-columns: 1fr; }
-  .potion-art { height: auto; aspect-ratio: 40 / 21; }
+  .potion-art { height: auto; aspect-ratio: 51 / 28; }
   .game-summary { min-height: 282px; }
   .rookrift-name { font-size: 88px; }
   .rookrift-tagline { font-size: 27px; }
