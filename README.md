@@ -8,7 +8,7 @@ studio; [Rookrift](https://rookrift.xyz) is its on-chain chess game, and
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The page. Hero, "Now pouring" game cards for Rookrift then Potion Game, studio principles, footer. |
+| `index.html` | The page. Hero, two side-by-side game cards (Rookrift, Potion Game) with expandable details, studio principles, footer. Cards stack on phones. |
 | `site.css` | Page styles. Builds on `label.css`. |
 | `label.css` | The shared potion label system (cream card, facts panel, bag grid), copied from the potion.game brand kit. |
 | `fonts/` | Silkscreen, VT323, Jacquard 24 and Pixelify Sans (OFL, see `fonts/LICENSE.md`). |

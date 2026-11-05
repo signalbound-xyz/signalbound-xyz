@@ -72,94 +72,100 @@ posthog.init('phc_nLXZm6nXGabThJq3TNxtGGkm6bR3s69bmhMkZK7hMp4H', {
   <section id="games" class="games" aria-labelledby="games-title">
     <h2 id="games-title" class="section-title">Now pouring <small>Two games. One studio.</small></h2>
 
-    <article class="game-card rookrift-card" aria-labelledby="rr-name">
-      <div class="rookrift-banner">
-        <img class="rookrift-landscape px" src="assets/rookrift/castle.png" width="306" height="168" alt="">
-        <div class="rookrift-heading">
-          <p class="rookrift-kicker">On-chain chess · On Fluent</p>
-          <span class="status">Live · Fluent mainnet</span>
+    <div class="game-grid">
+      <article class="game-card rookrift-card" aria-labelledby="rr-name">
+        <div class="game-art rookrift-banner">
+          <img class="rookrift-landscape px" src="assets/rookrift/castle.png" width="306" height="168" alt="">
+          <div class="rookrift-heading">
+            <p class="rookrift-kicker">Chess on Fluent</p>
+            <span class="status">Live · Mainnet</span>
+          </div>
+          <h3 id="rr-name" class="rookrift-name">Rookrift</h3>
+          <div class="rookrift-characters" aria-hidden="true">
+            <img class="px rookrift-pawn" src="assets/rookrift/pawn.svg" width="64" height="64" alt="">
+            <img class="px rookrift-rookie" src="assets/rookrift/rookie.svg" width="96" height="114" alt="">
+          </div>
         </div>
-        <div class="rookrift-copy">
-          <h3 id="rr-name">Rookrift</h3>
+        <div class="game-summary">
           <p class="rookrift-tagline">The castle is open.<br>Your move… if you dare.</p>
-          <p class="rookrift-lede">Invite a friend, play rated 5+3, or practice with Rookie. Every move is recorded on-chain.</p>
+          <p class="lede">Invite a friend, play rated 5+3, or practice with Rookie. Every move is recorded on-chain.</p>
           <div class="ctas">
             <a class="cta" href="https://rookrift.xyz">Play Rookrift</a>
           </div>
         </div>
-        <div class="rookrift-characters" aria-hidden="true">
-          <img class="px rookrift-pawn" src="assets/rookrift/pawn.svg" width="96" height="96" alt="">
-          <img class="px rookrift-rookie" src="assets/rookrift/rookie.svg" width="160" height="190" alt="">
-        </div>
-      </div>
-      <div class="rookrift-features">
-        <div>
-          <p class="rookrift-kicker">Across the board</p>
-          <h4>Bring a friend.</h4>
-          <p>Share a table link. Play a casual match or put your rating on the line.</p>
-        </div>
-        <div>
-          <p class="rookrift-kicker">Meet the resident</p>
-          <h4>Practice with Rookie.</h4>
-          <p>A beginner AI in orange shoes. No rating, just you and the castle’s rook.</p>
-        </div>
-        <div>
-          <p class="rookrift-kicker">Leave a trace</p>
-          <h4>Replay every move.</h4>
-          <p>Moves settle on Fluent. Watch a table or review the game without an account.</p>
-        </div>
-      </div>
-    </article>
+        <details class="game-details">
+          <summary>About Rookrift</summary>
+          <div class="rookrift-features">
+            <div>
+              <p class="rookrift-kicker">Across the board</p>
+              <h4>Bring a friend.</h4>
+              <p>Share a table link. Play a casual match or put your rating on the line.</p>
+            </div>
+            <div>
+              <p class="rookrift-kicker">Meet the resident</p>
+              <h4>Practice with Rookie.</h4>
+              <p>A beginner AI in orange shoes. No rating, just you and the castle’s rook.</p>
+            </div>
+            <div>
+              <p class="rookrift-kicker">Leave a trace</p>
+              <h4>Replay every move.</h4>
+              <p>Moves settle on Fluent. Watch a table or review the game without an account.</p>
+            </div>
+          </div>
+        </details>
+      </article>
 
-    <article class="game-card" aria-labelledby="pg-name">
-      <div class="game-head">
-        <img id="pg-name" class="px game-lockup" src="assets/potion-game-lockup.svg" width="201" height="96" alt="Potion Game">
-        <span class="status">Testnet · free to play</span>
-      </div>
-
-      <div class="game-body">
-        <div>
+      <article class="game-card potion-card" aria-labelledby="pg-name">
+        <div class="game-art potion-art">
+          <div class="game-head">
+            <img id="pg-name" class="px game-lockup" src="assets/potion-game-lockup.svg" width="134" height="64" alt="Potion Game">
+            <span class="status">Testnet · free to play</span>
+          </div>
+          <div class="hero-bag" aria-label="An example bag: twelve cells, eight bottles">
+            <div class="bag">
+              <div class="cell" style="grid-column:1 / span 2;grid-row:1 / span 1"><img src="assets/potions/ember.png" alt="Ember"></div>
+              <div class="cell" style="grid-column:3 / span 1;grid-row:1 / span 1"><img src="assets/potions/cinder.png" alt="Cinder"></div>
+              <div class="cell" style="grid-column:4 / span 1;grid-row:1 / span 1"><img src="assets/potions/focus.png" alt="Focus"></div>
+              <div class="cell" style="grid-column:1 / span 1;grid-row:2 / span 2"><img src="assets/potions/stone.png" alt="Stone"></div>
+              <div class="cell" style="grid-column:2 / span 1;grid-row:2 / span 1"><img src="assets/potions/dew.png" alt="Dew"></div>
+              <div class="cell" style="grid-column:3 / span 1;grid-row:2 / span 1"><img src="assets/potions/dew.png" alt="Dew"></div>
+              <div class="cell" style="grid-column:4 / span 1;grid-row:2 / span 2"><img src="assets/potions/sunfire.png" alt="Sunfire"></div>
+              <div class="cell" style="grid-column:2 / span 2;grid-row:3 / span 1"><img src="assets/potions/bastion.png" alt="Bastion"></div>
+            </div>
+          </div>
+        </div>
+        <div class="game-summary">
           <h3 id="pg-title" class="tagline">Pack it.<br>Don’t play it.</h3>
           <p class="lede">A pixel bag battler. Twelve cells, permanent bottles, and fights that settle on-chain and replay from the receipt.</p>
           <div class="ctas">
-            <a class="cta" href="https://testnet.potion.game">Taste it free on testnet</a>
-            <a class="cta ghost" href="https://testnet.potion.game/game-rules/2026-10-29-balance.html">Game rules</a>
+            <a class="cta" href="https://testnet.potion.game">Play Potion Game</a>
+            <a class="game-rules" href="https://testnet.potion.game/game-rules/2026-10-29-balance.html">Game rules</a>
           </div>
         </div>
-        <div class="hero-bag" aria-label="An example bag: twelve cells, eight bottles">
-          <div class="bag">
-            <div class="cell" style="grid-column:1 / span 2;grid-row:1 / span 1"><img src="assets/potions/ember.png" alt="Ember"></div>
-            <div class="cell" style="grid-column:3 / span 1;grid-row:1 / span 1"><img src="assets/potions/cinder.png" alt="Cinder"></div>
-            <div class="cell" style="grid-column:4 / span 1;grid-row:1 / span 1"><img src="assets/potions/focus.png" alt="Focus"></div>
-            <div class="cell" style="grid-column:1 / span 1;grid-row:2 / span 2"><img src="assets/potions/stone.png" alt="Stone"></div>
-            <div class="cell" style="grid-column:2 / span 1;grid-row:2 / span 1"><img src="assets/potions/dew.png" alt="Dew"></div>
-            <div class="cell" style="grid-column:3 / span 1;grid-row:2 / span 1"><img src="assets/potions/dew.png" alt="Dew"></div>
-            <div class="cell" style="grid-column:4 / span 1;grid-row:2 / span 2"><img src="assets/potions/sunfire.png" alt="Sunfire"></div>
-            <div class="cell" style="grid-column:2 / span 2;grid-row:3 / span 1"><img src="assets/potions/bastion.png" alt="Bastion"></div>
+        <details class="game-details">
+          <summary>About Potion Game</summary>
+          <div class="strip">
+            <div class="mini"><img src="assets/potions/ember.png" alt=""><p class="k">Warning</p><h4>Do not exceed 12 cells.</h4><p>Fixed footprints. No rotation. Neighbors amplify each other by up to 24%.</p></div>
+            <div class="mini"><img src="assets/potions/stone.png" alt=""><p class="k">Permanence</p><h4>Expires: never.</h4><p>Fighting never consumes a bottle. Lose the fight, keep the bag.</p></div>
+            <div class="mini"><img src="assets/potions/origin.png" alt=""><p class="k">Provenance</p><h4>Every fight is a receipt.</h4><p>Settled on Fluent. Anyone can watch the replay without logging in.</p></div>
           </div>
-        </div>
-      </div>
 
-      <div class="strip">
-        <div class="mini"><img src="assets/potions/ember.png" alt=""><p class="k">Warning</p><h4>Do not exceed 12 cells.</h4><p>Fixed footprints. No rotation. Neighbors amplify each other by up to 24%.</p></div>
-        <div class="mini"><img src="assets/potions/stone.png" alt=""><p class="k">Permanence</p><h4>Expires: never.</h4><p>Fighting never consumes a bottle. Lose the fight, keep the bag.</p></div>
-        <div class="mini"><img src="assets/potions/origin.png" alt=""><p class="k">Provenance</p><h4>Every fight is a receipt.</h4><p>Settled on Fluent. Anyone can watch the replay without logging in.</p></div>
-      </div>
+          <div class="facts-wrap">
+            <section class="facts" aria-label="Potion facts">
+              <h4 class="facts-title">Potion facts<small>Per character</small></h4>
+              <div class="fact"><b>Dosage</b><span>3 Wardens daily · 10 fights per 12 hours · 1 chest per 24 hours</span></div>
+              <div class="fact"><b>Contains</b><span>20 bottle kinds · 5 classes · 13 Wardens · 64-bottle inventory</span></div>
+              <div class="fact"><b>Active ingredient</b><span>Your brain. 0 APM.</span></div>
+              <div class="fact"><b>Pay to win</b><span>None. Subscriptions change chest focus and gold, never stats.</span></div>
+              <div class="fact warn"><b>Warning</b><span>Barnaby the owl. Three clicks. Don’t tell anyone.</span></div>
+              <div class="fact"><b>Side effects</b><span>May include winning.</span></div>
+            </section>
+          </div>
 
-      <div class="facts-wrap">
-        <section class="facts" aria-label="Potion facts">
-          <h4 class="facts-title">Potion facts<small>Per character</small></h4>
-          <div class="fact"><b>Dosage</b><span>3 Wardens daily · 10 fights per 12 hours · 1 chest per 24 hours</span></div>
-          <div class="fact"><b>Contains</b><span>20 bottle kinds · 5 classes · 13 Wardens · 64-bottle inventory</span></div>
-          <div class="fact"><b>Active ingredient</b><span>Your brain. 0 APM.</span></div>
-          <div class="fact"><b>Pay to win</b><span>None. Subscriptions change chest focus and gold, never stats.</span></div>
-          <div class="fact warn"><b>Warning</b><span>Barnaby the owl. Three clicks. Don’t tell anyone.</span></div>
-          <div class="fact"><b>Side effects</b><span>May include winning.</span></div>
-        </section>
-      </div>
-
-      <p class="fine">Testnet build. No prizes, no tokens, no promises. Potions are fictional; please do not drink your bag.</p>
-    </article>
+          <p class="fine">Testnet build. No prizes, no tokens, no promises. Potions are fictional; please do not drink your bag.</p>
+        </details>
+      </article>
+    </div>
   </section>
 
   <section id="studio" class="studio" aria-labelledby="studio-title">
