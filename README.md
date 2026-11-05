@@ -15,6 +15,7 @@ Potion Game is its upcoming pixel bag battler (domain potion.game).
 | `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its Potion Game lockup (both copied from the game repo's `web/public/assets`, never redrawn here), potion sprites. All pixel art; scale only in whole multiples. |
 | `tools/logo.mjs` | Draws the studio ghost, wordmark and lockup from pixel maps; exports the favicons, `apple-touch-icon.png`, `icon-512.png` and the inline hero mark. |
 | `assets/rookrift/` | Castle landscape, Rookie and pawn adapted from the supplied Rookrift banner component. |
+| `assets/potion-game-thumbnail.png` | Temporary Potion Game thumbnail supplied by the user, displayed in full without cropping. |
 | `tools/rookrift.mjs` | Exports the Rookrift banner artwork as static PNG/SVG assets, without the prototype runtime. Run with Node; requires `rsvg-convert`. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
 | `og/x-banner.html` | X profile header, 1500×500; render it the same way as the OG card with `--window-size=1500,500`. The studio avatar for X is the padded icon from `tools/logo.mjs` (`iconSVG({ size: 25, background: true })` at 16 px per cell). |
@@ -61,7 +62,7 @@ The existing `testnet.signalbound.xyz` record is untouched.
 
 Potion Game is marked "Soon" with no play or rules links on the studio page.
 Its expanded details use the same text sections as Rookrift, without a facts panel.
-When the game launches, update the card's status and replace the "Soon" label with
+When the game launches, update the card's status and replace the disabled "Coming soon" button with
 a play link; add its link to the footer too.
 
 The footer still links to the existing Terms of Use at

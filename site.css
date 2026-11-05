@@ -99,8 +99,6 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.55);
 }
 .game-art { height: 320px; position: relative; overflow: hidden; border-bottom: 3px solid #2a2e36; }
-.game-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.game-lockup { display: block; width: 134px; height: 64px; } /* 2× of the 67×32 game lockup */
 .status {
   font-family: var(--font-display); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1;
   color: var(--ink); background: var(--paper); border: 3px solid var(--ink);
@@ -110,17 +108,17 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .game-summary .lede { font-size: 24px; line-height: 1.15; margin: 0 0 24px; }
 .game-summary .ctas { margin-top: auto; align-items: center; gap: 16px; }
 .game-summary .cta { font-size: 15px; padding: 16px 18px 14px; letter-spacing: 0; }
-.coming-soon {
-  font-family: var(--font-display); font-size: 15px; line-height: 1; text-transform: uppercase;
-  color: #a4967a; border: 3px solid #4a4540; padding: 17px 18px 15px;
+.game-summary .coming-soon, .game-summary .coming-soon:hover {
+  color: #a4967a; background: transparent; border: 3px solid #4a4540;
+  padding: 17px 18px 15px; box-shadow: none; transform: none; cursor: default;
 }
 .tagline {
   font-family: var(--font-display); font-weight: 700;
   font-size: 30px; line-height: 1.05; text-transform: uppercase; margin: 0 0 18px;
 }
-.potion-art { padding: 24px; background: #24272b; }
-.hero-bag { display: grid; place-items: center; margin-top: 18px; }
-.hero-bag .bag { grid-template-columns: repeat(4, 48px); grid-template-rows: repeat(3, 48px); gap: 4px; padding: 8px; border-width: 4px; }
+.potion-art { padding: 0; background: #0c1011; }
+.potion-thumbnail { display: block; width: 100%; height: 100%; object-fit: contain; }
+.potion-art .status { position: absolute; right: 16px; top: 16px; }
 
 .game-details { border-top: 2px solid #2a2e36; }
 .game-details summary { cursor: pointer; color: var(--paper); font-size: 23px; padding: 16px 24px; }
@@ -191,7 +189,6 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .principles { grid-template-columns: 1fr; }
   .game-art { height: 360px; }
   .game-summary { min-height: 340px; }
-  .game-head { gap: 12px; }
   .status { font-size: 9px; }
   .rookrift-name { font-size: 76px; }
   .rookrift-tagline { font-size: 24px; }
@@ -199,14 +196,15 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 }
 @media (max-width: 700px) {
   .game-grid { grid-template-columns: 1fr; }
+  .potion-art { height: auto; aspect-ratio: 40 / 21; }
   .game-summary { min-height: 282px; }
   .rookrift-name { font-size: 88px; }
   .rookrift-tagline { font-size: 27px; }
   .tagline { font-size: 30px; }
 }
 @media (max-width: 380px) {
-  .game-art, .game-summary { padding: 20px 16px; }
-  .game-art { height: 350px; }
+  .rookrift-banner, .game-summary { padding: 20px 16px; }
+  .rookrift-banner { height: 350px; }
   .rookrift-name { font-size: 72px; }
   .rookrift-tagline { font-size: 23px; }
   .game-summary .cta { font-size: 14px; padding: 16px 14px 14px; }
