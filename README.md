@@ -2,7 +2,7 @@
 
 The Signalbound studio site: one static page, no build step. Signalbound is the
 studio; [Rookrift](https://rookrift.xyz) is its on-chain chess game, and
-[Potion Game](https://potion.game) is its pixel bag battler (domain potion.game).
+Potion Game is its upcoming pixel bag battler (domain potion.game).
 
 ## Layout
 
@@ -57,14 +57,16 @@ at `76.76.21.21` and a `CNAME` for `www` pointing at the project's Vercel DNS
 target. Create both as "DNS only" (grey cloud) so Vercel can issue the certificate.
 The existing `testnet.signalbound.xyz` record is untouched.
 
-## Links to flip when potion.game points at the game
+## Potion Game launch
 
-The testnet build lives at `testnet.potion.game`. When the apex `potion.game`
-serves the game itself, replace these in `index.html`:
+Potion Game is marked "Soon" with no play or rules links on the studio page.
+Its expanded details use the same text sections as Rookrift, without a facts panel.
+When the game launches, update the card's status and replace the "Soon" label with
+a play link; add its link to the footer too.
 
-- `https://testnet.potion.game` → `https://potion.game` (one CTA and the footer link)
-- `https://testnet.potion.game/game-rules/2026-10-29-balance.html` → the game's current rules page
-- `https://testnet.potion.game/terms/2026-10-27.html` → the game's current Terms of Use
+The footer still links to the existing Terms of Use at
+`https://testnet.potion.game/terms/2026-10-27.html`; update this to the current terms
+at launch.
 
 ## Brand rules
 

@@ -110,7 +110,10 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .game-summary .lede { font-size: 24px; line-height: 1.15; margin: 0 0 24px; }
 .game-summary .ctas { margin-top: auto; align-items: center; gap: 16px; }
 .game-summary .cta { font-size: 15px; padding: 16px 18px 14px; letter-spacing: 0; }
-.game-rules { color: var(--paper); font-size: 22px; text-underline-offset: 4px; }
+.coming-soon {
+  font-family: var(--font-display); font-size: 15px; line-height: 1; text-transform: uppercase;
+  color: #a4967a; border: 3px solid #4a4540; padding: 17px 18px 15px;
+}
 .tagline {
   font-family: var(--font-display); font-weight: 700;
   font-size: 30px; line-height: 1.05; text-transform: uppercase; margin: 0 0 18px;
@@ -124,8 +127,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .game-details summary:hover { background: rgba(243, 231, 201, 0.06); }
 .game-details summary:focus-visible { outline: 3px solid var(--liquid); outline-offset: -6px; }
 .game-details[open] summary { border-bottom: 2px solid #2a2e36; }
-.strip, .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.strip { margin: 24px 18px; grid-template-columns: 1fr; }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .mini {
   background: var(--paper); color: var(--ink); border: 6px solid var(--ink);
   box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink), 10px 10px 0 0 rgba(0, 0, 0, 0.55);
@@ -135,18 +137,11 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .mini .k { font-family: var(--font-display); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin: 0 0 8px; }
 .mini h4 { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1; margin: 0 0 10px; text-transform: uppercase; }
 .mini p { font-size: 22px; line-height: 1.1; margin: 0; color: var(--ink-soft); }
-.mini img { height: 56px; width: auto; image-rendering: pixelated; float: right; margin: -4px 0 0 8px; }
-
-.facts-wrap { margin: 32px 24px 16px; }
-.facts-wrap .facts {
-  background: var(--paper); color: var(--ink); padding: 10px 18px 8px;
-  border: 6px solid var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink);
-}
-.facts-wrap .facts-title { font-size: 22px; }
-.facts-wrap .facts-title small { float: none; display: block; font-size: 20px; margin-top: 6px; }
-.facts-wrap .fact { flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 0 6px; font-size: 22px; }
-.facts-wrap .fact span { text-align: left; }
-.facts-wrap .fact b { font-size: 13px; padding-top: 4px; }
+.game-features > div { padding: 24px; }
+.game-features > div + div { border-top: 2px solid #2a2e36; }
+.feature-kicker { font-size: 18px; line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase; color: var(--liquid); margin: 0 0 8px; }
+.game-features h4 { font-family: 'Jacquard 24', monospace; font-size: 34px; font-weight: 400; line-height: 1; margin: 0 0 10px; }
+.game-features p:last-child { font-size: 23px; line-height: 1.15; color: #cdbf9f; margin: 0; }
 .fine { font-size: 20px; line-height: 1.2; color: #a4967a; margin: 20px 24px 24px; }
 
 /* ---------- Rookrift — the supplied castle, type, and pixel characters ---------- */
@@ -170,11 +165,9 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .rookrift-pawn { width: 64px; height: 64px; }
 .rookrift-rookie { width: 96px; height: 114px; }
 .rookrift-card .game-details, .rookrift-card .game-details[open] summary { border-color: #3d3152; }
-.rookrift-features > div { padding: 24px; }
-.rookrift-features > div + div { border-top: 2px solid #3d3152; }
-.rookrift-features .rookrift-kicker { font-size: 18px; color: #a487c8; margin-bottom: 8px; }
-.rookrift-features h4 { font-family: 'Jacquard 24', monospace; font-size: 34px; font-weight: 400; line-height: 1; margin: 0 0 10px; }
-.rookrift-features p:last-child { font-size: 23px; line-height: 1.15; color: #c2b8d2; margin: 0; }
+.rookrift-card .game-features > div + div { border-color: #3d3152; }
+.rookrift-card .feature-kicker { color: #a487c8; }
+.rookrift-card .game-features p:last-child { color: #c2b8d2; }
 
 /* ---------- studio ---------- */
 .studio-note { font-size: 24px; line-height: 1.2; color: #cdbf9f; margin: 28px 0 0; max-width: 760px; }
@@ -218,5 +211,4 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .rookrift-tagline { font-size: 23px; }
   .game-summary .cta { font-size: 14px; padding: 16px 14px 14px; }
   .game-details summary { padding-inline: 16px; }
-  .facts-wrap { margin-inline: 18px; }
 }
