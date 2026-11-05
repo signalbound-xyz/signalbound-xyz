@@ -1,18 +1,21 @@
 # signalbound.xyz
 
 The Signalbound studio site: one static page, no build step. Signalbound is the
-studio; [Potion Game](https://potion.game) is the game it makes (domain potion.game).
+studio; [Rookrift](https://rookrift.xyz) is its on-chain chess game, and
+[Potion Game](https://potion.game) is its pixel bag battler (domain potion.game).
 
 ## Layout
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The page. Hero, "Now pouring" game card for Potion Game, studio principles, footer. |
+| `index.html` | The page. Hero, "Now pouring" game cards for Rookrift then Potion Game, studio principles, footer. |
 | `site.css` | Page styles. Builds on `label.css`. |
 | `label.css` | The shared potion label system (cream card, facts panel, bag grid), copied from the potion.game brand kit. |
-| `fonts/` | Silkscreen and VT323 (OFL, see `fonts/LICENSE.md`). |
+| `fonts/` | Silkscreen, VT323, Jacquard 24 and Pixelify Sans (OFL, see `fonts/LICENSE.md`). |
 | `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its Potion Game lockup (both copied from the game repo's `web/public/assets`, never redrawn here), potion sprites. All pixel art; scale only in whole multiples. |
 | `tools/logo.mjs` | Draws the studio ghost, wordmark and lockup from pixel maps; exports the favicons, `apple-touch-icon.png`, `icon-512.png` and the inline hero mark. |
+| `assets/rookrift/` | Castle landscape, Rookie and pawn adapted from the supplied Rookrift banner component. |
+| `tools/rookrift.mjs` | Exports the Rookrift banner artwork as static PNG/SVG assets, without the prototype runtime. Run with Node; requires `rsvg-convert`. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
 | `og/x-banner.html` | X profile header, 1500×500; render it the same way as the OG card with `--window-size=1500,500`. The studio avatar for X is the padded icon from `tools/logo.mjs` (`iconSVG({ size: 25, background: true })` at 16 px per cell). |
 
@@ -75,3 +78,6 @@ serves the game itself, replace these in `index.html`:
 - Colours and type come from `label.css`: paper `#f3e7c9`, ink `#15110e`, night
   `#101215`, red `#c8372d`, liquid `#e85d3a`, plus signal teal `#5ad1c8` for the studio;
   Silkscreen for display, VT323 for body.
+- Rookrift keeps the supplied design's violet castle, orange actions, Jacquard 24
+  title, Pixelify Sans tagline, and pixel characters. Its self-hosted fonts and
+  their OFL licenses are in `fonts/`; its card comes before Potion Game.
