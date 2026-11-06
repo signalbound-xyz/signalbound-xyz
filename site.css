@@ -139,6 +139,7 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .game-features > div + div { border-top: 2px solid #2a2e36; }
 .feature-kicker { font-size: 18px; line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase; color: var(--liquid); margin: 0 0 8px; }
 .game-features h4 { font-family: 'Jacquard 24', monospace; font-size: 34px; font-weight: 400; line-height: 1; margin: 0 0 10px; }
+.potion-card .game-features h4 { font-family: var(--font-display); font-size: 24px; font-weight: 700; line-height: 1.1; }
 .game-features p:last-child { font-size: 23px; line-height: 1.15; color: #cdbf9f; margin: 0; }
 .fine { font-size: 20px; line-height: 1.2; color: #a4967a; margin: 20px 24px 24px; }
 
