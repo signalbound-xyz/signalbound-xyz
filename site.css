@@ -144,18 +144,26 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .fine { font-size: 20px; line-height: 1.2; color: #a4967a; margin: 20px 24px 24px; }
 
 /* ---------- Rookrift — the supplied banner and supporting copy ---------- */
-.rookrift-card { background: #110c18; border-color: #a487c8; color: #ece2c8; }
+.rookrift-card {
+  --font-rookrift-heading: 'Gloock', Georgia, serif;
+  --font-rookrift-label: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #110c18; border-color: #a487c8; color: #ece2c8;
+}
 .rookrift-banner { padding: 0; background: #f3eee2; border-bottom-color: #3d3152; }
 .rookrift-thumbnail { display: block; width: 100%; height: 100%; object-fit: contain; }
-.rookrift-tagline { font-family: 'Pixelify Sans', monospace; font-size: 27px; font-weight: 500; line-height: 1.15; margin: 0 0 18px; }
-.rookrift-card .lede { color: #c2b8d2; }
-.rookrift-card .cta { background: #e96a40; border-color: #05030a; color: #1a0b05; box-shadow: 6px 6px 0 #9c3b1c; }
+.rookrift-tagline { font-family: var(--font-rookrift-heading); font-size: 32px; font-weight: 400; line-height: 1.1; margin: 0 0 18px; }
+.rookrift-card .lede { font-size: 18px; line-height: 1.5; color: #c2b8d2; }
+.rookrift-card .cta { font-family: inherit; font-weight: 500; text-transform: none; background: #e96a40; border-color: #05030a; color: #1a0b05; box-shadow: 6px 6px 0 #9c3b1c; }
 .rookrift-card .cta:hover { box-shadow: 4px 4px 0 #9c3b1c; }
 .rookrift-card a:focus-visible, .rookrift-card summary:focus-visible { outline-color: #e4eb91; }
 .rookrift-card .game-details, .rookrift-card .game-details[open] summary { border-color: #3d3152; }
+.rookrift-card .game-details summary { font-size: 17px; line-height: 1.4; }
 .rookrift-card .game-features > div + div { border-color: #3d3152; }
-.rookrift-card .feature-kicker { color: #a487c8; }
-.rookrift-card .game-features p:last-child { color: #c2b8d2; }
+.rookrift-card .feature-kicker { font-family: var(--font-rookrift-label); font-size: 12px; line-height: 1.4; letter-spacing: 1px; color: #a487c8; }
+.rookrift-card .game-features h4 { font-family: var(--font-rookrift-heading); font-size: 27px; line-height: 1.15; }
+.rookrift-card .game-features p:last-child { font-size: 17px; line-height: 1.5; color: #c2b8d2; }
 
 /* ---------- studio ---------- */
 .studio-note { font-size: 24px; line-height: 1.2; color: #cdbf9f; margin: 28px 0 0; max-width: 760px; }
@@ -180,19 +188,19 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .game-art { height: 360px; }
   .game-summary { min-height: 340px; }
   .status { font-size: 9px; }
-  .rookrift-tagline { font-size: 24px; }
+  .rookrift-tagline { font-size: 28px; }
   .tagline { font-size: 26px; }
 }
 @media (max-width: 700px) {
   .game-grid { grid-template-columns: 1fr; }
   .rookrift-banner, .potion-art { height: auto; aspect-ratio: 51 / 28; }
   .game-summary { min-height: 282px; }
-  .rookrift-tagline { font-size: 27px; }
+  .rookrift-tagline { font-size: 32px; }
   .tagline { font-size: 30px; }
 }
 @media (max-width: 380px) {
   .game-summary { padding: 20px 16px; }
-  .rookrift-tagline { font-size: 23px; }
+  .rookrift-tagline { font-size: 30px; }
   .game-summary .cta { font-size: 14px; padding: 16px 14px 14px; }
   .game-details summary { padding-inline: 16px; }
 }
