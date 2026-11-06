@@ -1,7 +1,8 @@
 # signalbound.xyz
 
 The Signalbound studio site: one static page, no build step. Signalbound is the
-studio; [Rookrift](https://rookrift.xyz) is its on-chain chess game, and
+studio; [Rookrift](https://rookrift.xyz) tells The Unfinished Tapestry, a chess
+story woven across twelve chapters, and
 Potion Game is its upcoming pixel bag battler (domain potion.game).
 
 ## Layout
