@@ -12,9 +12,10 @@ Potion Game is its upcoming pixel bag battler (domain potion.game).
 | `site.css` | Page styles. Builds on `label.css`. |
 | `label.css` | The shared potion label system (cream card, facts panel, bag grid), copied from the potion.game brand kit. |
 | `fonts/` | Silkscreen, VT323, Jacquard 24 and Pixelify Sans (OFL, see `fonts/LICENSE.md`). |
-| `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its Potion Game lockup (both copied from the game repo's `web/public/assets`, never redrawn here), potion sprites. All pixel art; scale only in whole multiples. |
+| `assets/` | Studio mark, lockup and wordmark, the game's crowned-flask mark and its Potion Game lockup (both copied from the game repo's `web/public/assets`, never redrawn here), potion sprites and supplied game banners. Scale pixel-art assets only in whole multiples. |
 | `tools/logo.mjs` | Draws the studio ghost, wordmark and lockup from pixel maps; exports the favicons, `apple-touch-icon.png`, `icon-512.png` and the inline hero mark. |
-| `assets/rookrift/` | Castle landscape, Rookie and pawn adapted from the supplied Rookrift banner component. |
+| `assets/rookrift/banner.png` | Supplied 2448×1344 “The Unfinished Tapestry” Rookrift banner. Displayed in full without cropping. |
+| `assets/rookrift/` | The current banner and retained castle, Rookie and pawn artwork from the original banner component. |
 | `assets/potion-game-thumbnail.png` | Default 1224×672 Potion Game thumbnail selected by the user, with the existing Potion Game logo and “Small bag. Big trouble.” headline. Displayed in full without cropping. |
 | `tools/rookrift.mjs` | Exports the Rookrift banner artwork as static PNG/SVG assets, without the prototype runtime. Run with Node; requires `rsvg-convert`. |
 | `og/og.html` → `og.png` | Link-preview card, 1200×630. |
@@ -81,6 +82,7 @@ at launch.
 - Colours and type come from `label.css`: paper `#f3e7c9`, ink `#15110e`, night
   `#101215`, red `#c8372d`, liquid `#e85d3a`, plus signal teal `#5ad1c8` for the studio;
   Silkscreen for display, VT323 for body.
-- Rookrift keeps the supplied design's violet castle, orange actions, Jacquard 24
-  title, Pixelify Sans tagline, and pixel characters. Its self-hosted fonts and
-  their OFL licenses are in `fonts/`; its card comes before Potion Game.
+- Rookrift uses the supplied “The Unfinished Tapestry” banner without overlays or
+  cropping. Its card retains violet borders, orange actions, Jacquard 24 feature
+  headings and the Pixelify Sans tagline. Its self-hosted fonts and their OFL
+  licenses are in `fonts/`; its card comes before Potion Game.

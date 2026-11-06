@@ -143,26 +143,15 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
 .game-features p:last-child { font-size: 23px; line-height: 1.15; color: #cdbf9f; margin: 0; }
 .fine { font-size: 20px; line-height: 1.2; color: #a4967a; margin: 20px 24px 24px; }
 
-/* ---------- Rookrift — the supplied castle, type, and pixel characters ---------- */
+/* ---------- Rookrift — the supplied banner and supporting copy ---------- */
 .rookrift-card { background: #110c18; border-color: #a487c8; color: #ece2c8; }
-.rookrift-banner { isolation: isolate; padding: 24px; border-bottom-color: #3d3152; }
-.rookrift-landscape { position: absolute; z-index: -2; right: 0; top: 0; width: 612px; height: 336px; max-width: none; }
-.rookrift-banner::before {
-  content: ""; position: absolute; z-index: -1; inset: 0;
-  background: linear-gradient(90deg, rgba(7, 5, 11, 0.6), transparent 80%);
-}
-.rookrift-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-.rookrift-kicker { font-family: var(--font-body); font-size: 20px; font-weight: 400; line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase; color: #e96a40; margin: 0; }
-.rookrift-card .status { color: #ece2c8; background: #2a2138; border-color: #05030a; box-shadow: 4px 4px 0 #a487c8; }
-.rookrift-name { font-family: 'Jacquard 24', monospace; font-weight: 400; font-size: 88px; line-height: 0.9; margin: 0; text-shadow: 3px 3px 0 #9c3b1c, 6px 6px 0 #05030a; }
+.rookrift-banner { padding: 0; background: #f3eee2; border-bottom-color: #3d3152; }
+.rookrift-thumbnail { display: block; width: 100%; height: 100%; object-fit: contain; }
 .rookrift-tagline { font-family: 'Pixelify Sans', monospace; font-size: 27px; font-weight: 500; line-height: 1.15; margin: 0 0 18px; }
 .rookrift-card .lede { color: #c2b8d2; }
 .rookrift-card .cta { background: #e96a40; border-color: #05030a; color: #1a0b05; box-shadow: 6px 6px 0 #9c3b1c; }
 .rookrift-card .cta:hover { box-shadow: 4px 4px 0 #9c3b1c; }
 .rookrift-card a:focus-visible, .rookrift-card summary:focus-visible { outline-color: #e4eb91; }
-.rookrift-characters { position: absolute; right: 20px; bottom: 20px; display: flex; align-items: flex-end; }
-.rookrift-pawn { width: 64px; height: 64px; }
-.rookrift-rookie { width: 96px; height: 114px; }
 .rookrift-card .game-details, .rookrift-card .game-details[open] summary { border-color: #3d3152; }
 .rookrift-card .game-features > div + div { border-color: #3d3152; }
 .rookrift-card .feature-kicker { color: #a487c8; }
@@ -191,22 +180,18 @@ a:focus-visible { outline: 3px solid var(--liquid); outline-offset: 3px; }
   .game-art { height: 360px; }
   .game-summary { min-height: 340px; }
   .status { font-size: 9px; }
-  .rookrift-name { font-size: 76px; }
   .rookrift-tagline { font-size: 24px; }
   .tagline { font-size: 26px; }
 }
 @media (max-width: 700px) {
   .game-grid { grid-template-columns: 1fr; }
-  .potion-art { height: auto; aspect-ratio: 51 / 28; }
+  .rookrift-banner, .potion-art { height: auto; aspect-ratio: 51 / 28; }
   .game-summary { min-height: 282px; }
-  .rookrift-name { font-size: 88px; }
   .rookrift-tagline { font-size: 27px; }
   .tagline { font-size: 30px; }
 }
 @media (max-width: 380px) {
-  .rookrift-banner, .game-summary { padding: 20px 16px; }
-  .rookrift-banner { height: 350px; }
-  .rookrift-name { font-size: 72px; }
+  .game-summary { padding: 20px 16px; }
   .rookrift-tagline { font-size: 23px; }
   .game-summary .cta { font-size: 14px; padding: 16px 14px 14px; }
   .game-details summary { padding-inline: 16px; }
